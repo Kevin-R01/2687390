@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Azar {
+public class Reto1Azar {
 
 public static void main(String[] args) {
     int numero;
@@ -12,10 +12,9 @@ public static void main(String[] args) {
    
 Scanner lectura = new Scanner(System.in);
     System.out.println( "elija cara o sello");
-    numero = aleatorio.nextInt();
+    numero = lectura.nextInt();
 
         lectura.close();
 
     }
-}
 }
