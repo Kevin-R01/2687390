@@ -20,7 +20,4 @@ public static void main(String[] args) {
         lectura.close();
 
     }
-
-
-
 }

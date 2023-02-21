@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import javax.security.auth.x500.X500Principal;
-
 
 public class reto2{
 
@@ -23,6 +21,8 @@ public class reto2{
     + "con" + "area" + " metros cuadrados " + " el presupuesto del proyecto es " + "presupuesto");
 
     System.out.println(" el presupuesto es " + "presupuesto");
+
+        lectura.close();
     }
 }
 
