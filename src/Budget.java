@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class Budget{
     
     public static void main(String[] args) {
-        int spent, budget, totals,op;
+        int spent, budget, totals,op, acumumulador;
         Scanner lectura = new Scanner (System.in);
         op=1;
+        acumumulador=3;
         budget=100000;
         while(op==1){
 
@@ -21,6 +22,7 @@ public class Budget{
 
         for(int x=1; x<=3; x++ )
             System.out.println("ya excediste el gasto permitido ");
+
         }
 
 
