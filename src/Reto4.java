@@ -1,46 +1,69 @@
-importar  Java . útil _ aleatorio ;
-importar  Java . útil _ escáner ;
+import java.util.Random;
 
- clase  pública Reto4 {
+import java.util.Scanner;
 
-    public  static  void  main ( String [] args ) {
-        Escáner  escáner = nuevo  Escáner ( System . in );
-         Aleatorio aleatorio = nuevo  Aleatorio ();
-        String [] opciones = { "piedra" , "papel" , "tijera" };
+public class Reto4 {
 
-        sistema _ fuera _ println ( "Bienvenido al juego de piedra, papel o tijera. ¿Listo para jugar?" );
+    public static void main(String[] args) {
 
-        mientras ( verdadero ) {
-            sistema _ fuera _ print ( "Ingrese su opcion (piedra, papel o tijera):" );
-            String  opcionUsuario = escaner . línea siguiente (). a Minúsculas ();
+        Scanner scanner = new Scanner(System.in);
 
-            if ( opcionUsuario . es igual a ( "salir" )) {
-                sistema _ fuera _ println ( "¡Hasta la próxima!" );
-                romper ;
+        Random random = new Random();
+
+        String[] opciones = {"piedra", "papel", "tijera"};
+
+        System.out.println(" Estas jugando piedra papel o tijera, empecemos ");
+
+        while (true) {
+
+            System.out.print("digite (piedra, papel o tijera): ");
+
+            String opcionUsuario = scanner.nextLine().toLowerCase();
+
+            if (opcionUsuario.equals("salir")) {
+
+                System.out.println("te esperamos para el próximo juego");
+
+                break;
+
             }
 
-            if (! opcionUsuario . equals ( "piedra" ) && ! opcionUsuario . equals ( "papel" ) && ! opcionUsuario . equals ( "tijera" )) {
-                sistema _ fuera _ println ( "Opción inválida. Por favor ingrese piedra, papel o tijera." );
-                continuar ;
+            if (!opcionUsuario.equals("piedra") && !opcionUsuario.equals("papel") && !opcionUsuario.equals("tijera")) {
+
+                System.out.println(" carácter no valido ");
+
+                continue;
+
             }
 
-            int  opcionMaquina = random . siguienteInt ( 3 );
-            String  opcionMaquinaStr = opciones [ opcionMaquina ];
+            int opcionMaquina = random.nextInt(3);
 
-            sistema _ fuera _ println ( "La maquina seleccionada" + opcionMaquinaStr );
+            String opcionMaquinaStr = opciones[opcionMaquina];
 
-            if ( opcionUsuario . es igual a ( opcionMaquinaStr )) {
-                sistema _ fuera _ println ( "¡Empatar!" );
-            } else  if (( opcionUsuario . es igual a ( "piedra" ) && opcionMaquinaStr . es igual a ( "tijera" )) ||
-                       ( opcionUsuario . equals ( "papel" ) && opcionMaquinaStr . equals ( "piedra" )) ||
-                       ( opcionUsuario . equals ( "tijera" ) && opcionMaquinaStr . equals ( "papel" ))) {
-                sistema _ fuera _ println ( "¡Ganaste!" );
-            } más {
-                sistema _ fuera _ println ( "Perdiste!" );
+            System.out.println(" el sistema arrojo" + opcionMaquinaStr);
+
+            if (opcionUsuario.equals(opcionMaquinaStr)) {
+
+                System.out.println("Empate");
+
+            } else if ((opcionUsuario.equals("piedra") && opcionMaquinaStr.equals("tijera")) ||
+
+                       (opcionUsuario.equals("papel") && opcionMaquinaStr.equals("piedra")) ||
+
+                       (opcionUsuario.equals("tijera") && opcionMaquinaStr.equals("papel"))) {
+
+                System.out.println(" ha ganado, felicitaciones );
+
+            } else {
+
+                System.out.println("has perdido");
+
             }
+
         }
 
-        escáner _ cerrar ();
+        scanner.close();
+
     }
 
 }
